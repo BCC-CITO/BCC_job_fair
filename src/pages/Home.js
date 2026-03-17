@@ -1,7 +1,19 @@
+import HeroCarousel from "../components/HeroCarousel";
+import FeaturedCompanies from "../components/HiringCompanylist";
+import SuccessStories from '../components/SuccessStory'
+import ConnectWithUs from "../components/ConnecWithUs";
+import IndustrySectors from "../components/IndustryList";
+import JobSearchSection from "../components/JobSearchSection";
+
 export default function Home() {
   return (
-    <div className="p-6 text-3xl font-bold">
-      Home Page
+    <div>
+   <HeroCarousel/>
+      <JobSearchSection/>
+      <FeaturedCompanies/>
+      <SuccessStories/>
+      <IndustrySectors/>
+      <ConnectWithUs/>
     </div>
   );
 }

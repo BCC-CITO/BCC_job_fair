@@ -12,7 +12,7 @@ const Navbar2 = () => {
     { label: "Institution", path: "/institution" },
     { label: "Training Center", path: "/training-center" },
     { label: "Trainer", path: "/trainer" },
-    { label: "Job Fair", path: "/job-fair" },
+    { label: "Job Fair", path: "/jobfair" },
     { label: "Field Partner", path: "/field-partner" },
   ];
 
