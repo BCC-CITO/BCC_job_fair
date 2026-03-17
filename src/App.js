@@ -8,10 +8,11 @@ import Home from "./pages/Home";
 import Candidate from "./pages/Candidate";
 import Employer from "./pages/Employer";
 
-import ContactPhone from "./pages/ContactPhone";
+import ContactPhone from "./pages/ContactPhone"; 
 import ContactEmail from "./pages/ContactEmail";
 import Notifications from "./pages/Notifications";
 import Brochure from "./pages/Brochure";
+
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
