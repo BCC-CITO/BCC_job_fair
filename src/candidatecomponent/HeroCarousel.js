@@ -3,25 +3,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HeroCarousel() {
   const slides = [
-    {
-      image: "/images/hero.jpg",
-      title: "Find Your Perfect Job Match",
-      description:
-        "Connect with top employers, build your skills, and accelerate your career growth with our comprehensive job portal platform."
-    },
-    {
-      image: "/images/hero.jpg",
-      title: "Build Skills. Get Hired.",
-      description:
-        "Explore verified opportunities, internships, and training programs across industries."
-    },
-    {
-      image: "/images/hero.jpg",
-      title: "Start Your Career Journey",
-      description:
-        "Join thousands of professionals finding the right opportunities."
-    }
-  ];
+  {
+    image: "/images/hero1.jpg",
+    title: "Find Your Perfect Job Match",
+    description:
+      "Connect with top employers, build your skills, and accelerate your career growth."
+  },
+  {
+    image: "/images/hero2.jpg",
+    title: "Build Skills. Get Hired.",
+    description:
+      "Explore verified opportunities, internships, and training programs."
+  },
+  {
+    image: "/images/hero3.jpg",
+    title: "Start Your Career Journey",
+    description:
+      "Join thousands of professionals finding the right opportunities."
+  }
+];
 
   const [index, setIndex] = useState(0);
 
