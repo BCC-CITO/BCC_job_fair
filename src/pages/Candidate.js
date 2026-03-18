@@ -1,7 +1,17 @@
+import CallToAction from "../candidatecomponent/CallToAction";
+import FeaturesSection from "../candidatecomponent/FeaturesSection";
+import HeroCarousel from "../candidatecomponent/HeroCarousel";
+import StatsSection from "../candidatecomponent/StatsSection";
+
+
 export default function Candidate() {
   return (
-    <div className="p-6 text-3xl font-bold">
-      Candidate Page
+    <div>
+
+      <HeroCarousel />
+      <FeaturesSection />
+      <StatsSection />
+      <CallToAction />
     </div>
   );
 }
