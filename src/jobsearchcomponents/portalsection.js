@@ -9,13 +9,18 @@ const portals = [
     description: "Find your dream job and showcase your skills",
     points: [
       "Create professional profile",
-      "Upload resume & get parsed",
       "Browse job opportunities",
-      "Book interview slots",
       "Stall navigation for physical fairs",
     ],
-    login: "/candidate",
-    register: "/register",
+    steps: [
+      "Register as candidate",
+      "Complete Your Profile",
+      "Apply for Job Fairs",
+      "Attend the Job Fair",
+      "Get Hired",
+    ],
+    //login: "/candidate",
+    //register: "/register",
   },
   {
     title: "Employer Portal",
@@ -25,26 +30,31 @@ const portals = [
       "Post job vacancies",
       "Smart candidate matching",
       "Schedule interviews",
-      "Manage applications",
-      "Real-time chat with candidates",
     ],
-    login: "/employer",
-    register: "/register",
-  },
-  {
-    title: "Admin Portal",
-    icon: <Shield size={28} />,
-    description: "Manage events and monitor platform activity",
-    points: [
-      "Event management",
-      "User approval workflows",
-      "Analytics & reporting",
-      "Stall allocation",
-      "Stakeholder feedback",
+    steps: [
+      "Register as Employer",
+      "Submit your hiring Requirements",
+      "Attend the job fair ",
+      "Candidate Screening & interview",
+      "Select & Hire Candidates ",
     ],
-    login: "/admin",
-    register: "/admin-apply",
+    //login: "/employer",
+    //register: "/register",
   },
+ // {
+   // title: "Admin Portal",
+    //icon: <Shield size={28} />,
+    //description: "Manage events and monitor platform activity",
+    //points: [
+     // "Event management",
+     // "User approval workflows",
+     // "Analytics & reporting",
+     // "Stall allocation",
+     // "Stakeholder feedback",
+    //],
+    //login: "/admin",
+    //register: "/admin-apply",
+  //},
 ];
 
 const PortalSection = () => {
@@ -63,13 +73,16 @@ const PortalSection = () => {
 
         <p className="mt-2 text-sm text-gray-500">
           New user?{" "}
-          <Link to="/registerjobfair" className="text-indigo-600 font-medium">
+          <Link
+            //to="/registerjobfair*"
+            className="text-indigo-600 font-medium"
+          >
             Create your account here
           </Link>
         </p>
 
         {/* CARDS */}
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 ml-10 mr-10 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
 
           {portals.map((portal, index) => (
             <div
@@ -101,17 +114,50 @@ const PortalSection = () => {
                 ))}
               </ul>
 
+              {/* ✅ NEW: VERTICAL STEPS (ONLY for Candidate & Employer) */}
+              {portal.steps && (
+                <div className="mt-6 text-left">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3">
+                    How it works
+                  </h4>
+
+                  <div className="flex flex-col gap-3">
+                    {portal.steps.map((step, i) => (
+                      <div key={i} className="flex items-start gap-3">
+
+                        {/* Step Circle + Arrow */}
+                        <div className="flex flex-col items-center">
+                          <div className="w-6 h-6 flex items-center justify-center rounded-full bg-indigo-600 text-white text-xs">
+                            {i + 1}
+                          </div>
+
+                          {i !== portal.steps.length - 1 && (
+                            <div className="flex flex-col items-center">
+                              <div className="w-px h-4 bg-gray-300"></div>
+                              <div className="text-gray-400 text-xs">↓</div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Step Text */}
+                        <p className="text-sm text-gray-600">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* BUTTONS */}
               <div className="mt-6 flex flex-col gap-3">
                 <Link
-                  to={portal.login}
+                  //to={portal.login}
                   className="w-full text-center bg-indigo-900 text-white py-2 rounded-full hover:bg-indigo-800 transition"
                 >
                   Login {portal.title}
                 </Link>
 
                 <Link
-                  to={portal.register}
+                  //to={portal.register}
                   className="w-full text-center border border-indigo-300 text-indigo-700 py-2 rounded-full hover:bg-indigo-50 transition"
                 >
                   {portal.title === "Admin Portal"

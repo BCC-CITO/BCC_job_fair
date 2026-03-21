@@ -36,43 +36,74 @@ export default function HeroCarousel() {
     );
 
   return (
-    <section className="relative w-full h-[520px] overflow-hidden">
+   <section className="relative w-full h-[420px] sm:h-[480px] md:h-[520px] overflow-hidden">
 
       {/* Background */}
-      <img
-        src={slides[index].image}
-        alt="hero"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+     <div
+  className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
+  style={{ transform: `translateX(-${index * 100}%)` }}
+>
+  {slides.map((slide, i) => (
+    <img
+      key={i}
+      src={slide.image}
+      alt="hero"
+      className="w-full h-full object-cover flex-shrink-0"
+    />
+  ))}
+</div>
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/70"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6 text-white">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          {slides[index].title}
+ <div
+  className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
+  style={{ transform: `translateX(-${index * 100}%)` }}
+>
+  {slides.map((slide, i) => (
+    <div key={i} className="w-full h-full relative flex-shrink-0">
+
+      {/* IMAGE */}
+      <img
+        src={slide.image}
+        alt="hero"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/70"></div>
+
+      {/* CONTENT */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4 sm:px-6 text-white">
+
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold md:font-extrabold mb-3 md:mb-4 leading-tight">
+          {slide.title}
         </h1>
 
-        <p className="max-w-2xl text-lg md:text-xl opacity-90 mb-8">
-          {slides[index].description}
+        <p className="max-w-xl md:max-w-2xl text-sm sm:text-base md:text-xl opacity-90 mb-6 md:mb-8">
+          {slide.description}
         </p>
 
-        <div className="flex gap-4">
-          <button className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 transition">
-            Get Started Today →
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <button className="bg-white text-blue-900 text-sm sm:text-base font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition">
+            Get Started →
           </button>
 
-          <button className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-900 transition">
+          <button className="border border-white text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-white hover:text-blue-900 transition">
             Explore Jobs
           </button>
         </div>
+
       </div>
+    </div>
+  ))}
+</div>
 
       {/* Left arrow */}
       <button
         onClick={prev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow"
       >
         <ChevronLeft size={22} />
       </button>
@@ -91,9 +122,9 @@ export default function HeroCarousel() {
           <div
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              i === index ? "bg-white" : "bg-white/40"
-            }`}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full cursor-pointer ${
+  i === index ? "bg-white" : "bg-white/40"
+}`}
           />
         ))}
       </div>

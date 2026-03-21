@@ -7,14 +7,17 @@ const Navbar2 = () => {
   const [open, setOpen] = useState(false);
 
   const menuItems = [
-    { label: "Candidate", path: "/candidate" },
-    { label: "Employer", path: "/employer" },
-    { label: "Institution", path: "/institution" },
-    { label: "Training Center", path: "/training-center" },
-    { label: "Trainer", path: "/trainer" },
+    { label: "Candidate"},
+    { label: "Employer"}, 
     { label: "Job Fair", path: "/jobfair" },
-    { label: "Field Partner", path: "/field-partner" },
+   
   ];
+  {/* path: "/employer"v ,path: "/candidate" */}
+  {/* path: "/institution"*/}
+  {/* path: "/training-center" */}
+  {/* path: "/trainer" */}
+  {/*{ label: "Institution"},{ label: "Training Center"}, { label: "Trainer"}, { label: "Field Partner"},    */}
+  
 
   return (
     <nav className="w-full bg-white shadow-sm border-b sticky top-0 z-[999]">
@@ -22,8 +25,9 @@ const Navbar2 = () => {
 
         {/* LEFT — LOGO */}
         <div className="flex items-center gap-2 flex-shrink-0">
+         <Link to='/'>
           <img src={logo} alt="Logo" className="h-10" />
-          
+          </Link>
         </div>
 
         {/* CENTER — DESKTOP MENU */}

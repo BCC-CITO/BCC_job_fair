@@ -4,12 +4,12 @@ import { User, Building2, Shield } from "lucide-react";
 const features = [
   {
     icon: <User size={28} />,
-    title: "For Job Seekers",
-    desc: "Create profiles, apply to jobs, attend virtual and physical job fairs, and connect with top employers.",
+    title: "For Candidate",
+    desc: "Update profile, apply for jobs, attend physical job fairs, and connect with top employers.",
   },
   {
     icon: <Building2 size={28} />,
-    title: "For Employers",
+    title: "For Employer",
     desc: "Post jobs, browse candidates, participate in job fairs, and streamline your hiring process.",
   },
   {
