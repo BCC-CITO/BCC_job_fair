@@ -10,6 +10,7 @@ const Navbar2 = () => {
     { label: "Candidate"},
     { label: "Employer"}, 
     { label: "Job Fair", path: "/jobfair" },
+    { label: "Contact", path: "/contact"}
    
   ];
   {/* path: "/employer"v ,path: "/candidate" */}

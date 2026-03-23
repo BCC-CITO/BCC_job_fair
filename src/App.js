@@ -20,6 +20,8 @@ import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import JobFair from "./pages/jobfair";
 
+import Contact from "./pages/contact";
+
 function App() {
   return (
     <BrowserRouter>
@@ -41,6 +43,7 @@ function App() {
         
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
